@@ -1,8 +1,14 @@
-(defproject org.arachne-framework/valuehash "0.1.1"
+(defproject co.chatterbox/valuehash "0.1.2"
   :description "Value based hashing for Clojure data"
-  :license {:name "Eclipse Public License"
-            :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.9.0-alpha16" :scope "provided"]
-                 [org.clojure/test.check "0.9.0" :scope "test"]
+  :dependencies [[org.clojure/clojure "1.9.0" :scope "provided"]
+                 [org.clojure/test.check "0.10.0-alpha3" :scope "test"]
                  [criterium "0.4.4" :scope "test"]]
-  :repositories [["arachne-dev" "http://maven.arachne-framework.org/artifactory/arachne-dev"]])
+  :repositories [["chatterbox" {:url      "https://chatterbox.jfrog.io/chatterbox/java"
+                                :username "machine" :password "machine"}]]
+
+  :deploy-repositories [["snapshots" {:url           "https://chatterbox.jfrog.io/chatterbox/libs-snapshot-local/"
+                                      :username      "machine" :password "machine"
+                                      :sign-releases false}]
+                        ["releases" {:url           "https://chatterbox.jfrog.io/chatterbox/libs-release-local/"
+                                     :username      "machine" :password "machine"
+                                     :sign-releases false}]])
